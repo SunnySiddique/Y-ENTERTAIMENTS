@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <div className="relative">
         <Background />
-        <footer className="relative  bg-white bg-opacity-10  py-12">
+        <footer className="relative  bg-primary/10  py-12">
           <div className="container mx-auto px-5">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>

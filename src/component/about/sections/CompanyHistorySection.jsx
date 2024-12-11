@@ -38,7 +38,7 @@ const CompanyHistorySection = () => {
               variants={itemVariants}
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.5 }}
-              className={`bg-white/10 border border-primary/20 inline-block p-3 rounded-md  mb-4`}
+              className={`bg-primary/10 border border-primary/20 inline-block p-3 rounded-md  mb-4`}
             >
               <Clock className="w-6 h-6" />
             </motion.div>
@@ -81,7 +81,7 @@ const CompanyHistorySection = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -15 }}
                 transition={{ duration: 0.5 }}
-                className={`rounded-lg shadow-lg p-6 bg-white bg-opacity-10 hover:shadow-xl`}
+                className={`rounded-lg shadow-lg p-6 bg-primary/10 hover:shadow-xl`}
               >
                 <p className="leading-relaxed">
                   Our journey began in 2013 in London's City of Westminster,
@@ -98,7 +98,7 @@ const CompanyHistorySection = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -15 }}
                 transition={{ duration: 0.9, delay: 0.2 }}
-                className={`rounded-lg shadow-lg p-6 bg-white bg-opacity-10 hover:shadow-xl`}
+                className={`rounded-lg shadow-lg p-6 bg-primary/10 bg-opacity-10 hover:shadow-xl`}
               >
                 <p className="leading-relaxed">
                   Today, we are based in the historically rich and culturally

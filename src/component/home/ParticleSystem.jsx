@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -18,7 +16,7 @@ const ParticleSystem = ({ mousePosition }) => {
     ];
     const newParticles = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 300; i++) {
       newParticles.push({
         id: i,
         x: Math.random() * window.innerWidth,

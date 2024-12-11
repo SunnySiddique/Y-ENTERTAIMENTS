@@ -45,7 +45,7 @@ const SettingPage = () => {
         <div className=" w-full max-w-2xl mx-auto p-4">
           <h3 className="text-2xl font-semibold mb-4">Preview</h3>
 
-          <div className=" bg-white/10 rounded-lg shadow-lg p-6">
+          <div className=" bg-primary/10 rounded-lg shadow-lg p-6">
             <div className="pb-6 mb-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-medium text-xl">
@@ -70,7 +70,7 @@ const SettingPage = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-3">Our Services</h4>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className={`bg-white/10 rounded-lg p-4`}>
+                  <div className={`bg-primary/10 rounded-lg p-4`}>
                     <div className="w-8 h-8 mb-2 text-primary">
                       <Code />
                     </div>
@@ -79,7 +79,7 @@ const SettingPage = () => {
                       Responsive and scalable websites
                     </p>
                   </div>
-                  <div className={`bg-white/10 rounded-lg p-4`}>
+                  <div className={`bg-primary/10 rounded-lg p-4`}>
                     <div className="w-8 h-8 mb-2 text-primary">
                       <Smartphone />
                     </div>

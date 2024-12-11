@@ -49,7 +49,7 @@ const ValuesSection = () => {
               key={value}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className={`p-6 bg-white bg-opacity-10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group`}
+              className={`p-6 bg-primary/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group`}
             >
               <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">
                 {value}

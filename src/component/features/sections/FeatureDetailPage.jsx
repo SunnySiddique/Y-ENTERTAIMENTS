@@ -208,7 +208,7 @@ const FeatureDetailPage = () => {
           </div>
 
           {/* Content Section */}
-          <div className={`bg-white bg-opacity-10 p-6 sm:p-8`}>
+          <div className={`bg-primary/10 p-6 sm:p-8`}>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ">
               {event.title}
             </h1>

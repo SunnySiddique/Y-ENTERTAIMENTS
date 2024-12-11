@@ -54,7 +54,7 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.4 }}
               viewport={{ once: true }}
-              className={`bg-white bg-opacity-10 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300`}
+              className={`bg-primary/10 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300`}
             >
               <IconContainer key={index} icon={item.icon} />
               <h2 className="text-xl font-semibold mb-2 text-primary-foreground">
@@ -70,7 +70,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={`bg-white bg-opacity-10 p-6 rounded-lg shadow-md`}
+            className={`bg-primary/10 p-6 rounded-lg shadow-md`}
           >
             <h2 className="text-2xl font-bold mb-4">Send us a Message</h2>
             <p className="mb-6">
@@ -117,7 +117,7 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                className={`bg-white/10 py-2 px-4 rounded-md hover:bg-primary transition-colors duration-300 flex items-center justify-center`}
+                className={`bg-primary/10 py-2 px-4 rounded-md hover:bg-primary transition-colors duration-300 flex items-center justify-center`}
               >
                 Send Message
                 <Send className="w-4 h-4 ml-2" />

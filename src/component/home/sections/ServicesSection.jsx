@@ -54,7 +54,7 @@ const ServicesSection = () => {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-white bg-opacity-10 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group`}
+              className={`bg-primary/10 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group`}
             >
               <div className="mb-4 relative overflow-hidden">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">

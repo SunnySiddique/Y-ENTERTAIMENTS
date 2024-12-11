@@ -41,7 +41,7 @@ const HomeFeaturesSection = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className={`bg-white bg-opacity-10 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group`}
+              className={`bg-primary bg-opacity-10 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group`}
             >
               <div className="mb-4 relative">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">

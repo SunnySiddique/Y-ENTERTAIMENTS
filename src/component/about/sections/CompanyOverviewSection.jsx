@@ -22,7 +22,7 @@ const CompanyOverviewSection = () => {
   return (
     <motion.section
       whileHover={{ y: -5 }}
-      className={` relative z-10 max-w-6xl mx-auto py-20 px-4  shadow-lg bg-white bg-opacity-10 rounded-sm`}
+      className={` relative z-10 max-w-6xl mx-auto py-20 px-4  shadow-lg bg-primary/10 rounded-sm`}
     >
       <div>
         <motion.div

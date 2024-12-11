@@ -32,7 +32,7 @@ const VisionAndMissionSection = () => {
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className={`bg-white bg-opacity-10 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow`}
+            className={`bg-primary/10 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow`}
           >
             <h2 className="text-3xl font-bold mb-4 text-primary-foreground">
               VISION
@@ -46,7 +46,7 @@ const VisionAndMissionSection = () => {
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className={`bg-white bg-opacity-10 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow`}
+            className={`bg-primary/10 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow`}
           >
             <h2 className="text-primary-foreground text-3xl font-bold mb-4 ">
               MISSION

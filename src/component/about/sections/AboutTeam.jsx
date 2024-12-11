@@ -101,7 +101,7 @@ const AboutTeam = () => {
                 rotateY: index === 2 ? 20 : -10,
                 scale: 1.1, // Slightly scale up the element on hover
               }}
-              className={`text-center bg-white bg-opacity-10 rounded-lg shadow group transition-transform duration-300`}
+              className={`text-center bg-primary bg-opacity-10 rounded-lg shadow group transition-transform duration-300`}
               style={{
                 transformStyle: "preserve-3d", // Enable 3D transformations
                 perspective: "1000px", // Create the 3D space

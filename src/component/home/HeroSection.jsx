@@ -131,7 +131,7 @@ const HeroSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative z-10 px-8 py-3 bg-white text-primary font-bold rounded-full shadow-lg"
+            className="relative z-10 px-8 py-3 bg-white text-black  font-bold rounded-full shadow-lg"
           >
             Get Started
           </motion.button>

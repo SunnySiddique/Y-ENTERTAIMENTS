@@ -63,7 +63,7 @@ const AboutPeopleSection = () => {
                 stiffness: 100,
                 damping: 12,
               }}
-              className={` inline-block p-3 rounded-md mb-4  bg-white/10 border border-primary/20`}
+              className={` inline-block p-3 rounded-md mb-4  bg-primary/10 border border-primary/20`}
             >
               <Users className="w-6 h-6" />
             </motion.div>
@@ -114,7 +114,7 @@ const AboutPeopleSection = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
-                className={`rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all duration-300 bg-white bg-opacity-10`}
+                className={`rounded-lg shadow-lg p-6 hover:shadow-2xl transition-all duration-300 bg-primary bg-opacity-10`}
               >
                 <h3 className="text-xl font-semibold mb-4 text-primary-foreground">
                   {card.title}

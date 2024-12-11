@@ -16,7 +16,7 @@ const FeatureCard = ({ id, title, image, description }) => {
           className="w-full h-60 transition-transform duration-300 hover:scale-105 object-cover"
         />
       </div>
-      <div className={`bg-white bg-opacity-10 p-6 `}>
+      <div className={`bg-primary/10 p-6 `}>
         <h3 className="text-xl font-bold mb-2 line-clamp-2 text-primary-foreground">
           {title}
         </h3>
