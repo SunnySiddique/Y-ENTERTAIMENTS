@@ -86,7 +86,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      to="/feature"
+                      to="/features"
                       className="hover:text-blue-400 transition-colors duration-300"
                     >
                       Features
