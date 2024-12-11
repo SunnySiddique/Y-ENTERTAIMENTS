@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Background from "../../layout/Background";
 import { LetterImages } from "../../utils/LetterImages";
 import LetterImage from "./LetterImage";
-import ParticleSystem from "./ParticleSystem";
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
@@ -40,8 +39,6 @@ const HeroSection = () => {
       }}
     >
       <Background />
-
-      <ParticleSystem mousePosition={mousePosition} />
 
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
