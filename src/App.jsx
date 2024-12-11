@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "swiper/css";
-import ParticlesContainer from "./canvas/ParticlesContainer";
 import FeatureDetailPage from "./component/features/sections/FeatureDetailPage";
 import Footer from "./component/footer/Footer";
 import PageTransition from "./component/transitions/PageTransition";
@@ -29,9 +28,9 @@ const App = () => {
 
   return (
     <>
-      <div data-theme={theme} className="relative min-h-screen z">
+      <div className="relative "></div>
+      <div data-theme={theme} className="relative ">
         {showBackground && <Background />}
-        <ParticlesContainer />
         <Navbar />
         <AnimatePresence mode="wait">
           <PageTransition />

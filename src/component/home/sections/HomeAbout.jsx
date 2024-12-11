@@ -5,7 +5,7 @@ import aboutImage from "/images/aboutImage.jpg";
 
 const HomeAbout = () => {
   return (
-    <section className="py-20 ">
+    <section className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <motion.div

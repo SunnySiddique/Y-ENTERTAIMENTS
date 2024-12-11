@@ -19,7 +19,7 @@ const LetterImage = ({ src, index, sectionRef }) => {
 
   return (
     <motion.div
-      className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 cursor-pointer"
+      className="relative  z-20 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 cursor-grab"
       animate={controls}
       whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.5 } }}
       drag
