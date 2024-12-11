@@ -9,6 +9,15 @@ import ParticleSystem from "./ParticleSystem";
 const HeroSection = () => {
   const sectionRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [positions, setPositions] = useState([]);
+
+  useEffect(() => {
+    const newPositions = LetterImages.map(() => ({
+      top: Math.random() * 80,
+      left: Math.random() * 90,
+    }));
+    setPositions(newPositions);
+  }, [LetterImages]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -39,15 +48,19 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="flex flex-wrap justify-center items-center"
+          className="grid grid-cols-4 md:grid-cols-5 "
         >
           {LetterImages.map((img, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="m-1"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="absolute"
+              style={{
+                top: `${positions[index]?.top}%`,
+                left: `${positions[index]?.left}%`,
+              }}
             >
               <LetterImage
                 src={img}
