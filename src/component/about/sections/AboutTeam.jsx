@@ -88,24 +88,15 @@ const AboutTeam = () => {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 150 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
                 ease: "easeOut",
               }}
-              whileHover={{
-                rotateX: index === 2 ? 20 : -10,
-                rotateY: index === 2 ? 20 : -10,
-                scale: 1.1, // Slightly scale up the element on hover
-              }}
               className={`text-center bg-primary bg-opacity-10 rounded-lg shadow group transition-transform duration-300`}
-              style={{
-                transformStyle: "preserve-3d", // Enable 3D transformations
-                perspective: "1000px", // Create the 3D space
-              }}
             >
               {/* Image Wrapper */}
               <div className="relative rounded-t-lg overflow-hidden">

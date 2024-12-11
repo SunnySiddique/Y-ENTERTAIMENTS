@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import Background from "../../layout/Background";
 import { LetterImages } from "../../utils/LetterImages";
 import LetterImage from "./LetterImage";
 
@@ -38,8 +37,6 @@ const HeroSection = () => {
         background: `linear-gradient(135deg, #962C2C 0%, #6E1C1C 50%, #4A0F0F 100%)`,
       }}
     >
-      <Background />
-
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

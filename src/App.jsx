@@ -6,7 +6,6 @@ import FeatureDetailPage from "./component/features/sections/FeatureDetailPage";
 import Footer from "./component/footer/Footer";
 import PageTransition from "./component/transitions/PageTransition";
 import { useTheme } from "./context/ThemeContext";
-import Background from "./layout/Background";
 import Navbar from "./layout/Navbar";
 import SettingPage from "./layout/SettingPage";
 import AboutPage from "./pages/about/AboutPage";
@@ -24,13 +23,11 @@ const App = () => {
   }, [location]);
 
   const showFooter = location.pathname !== "/settings";
-  const showBackground = location.pathname !== "/settings";
 
   return (
     <>
       <div className="relative "></div>
       <div data-theme={theme} className="relative ">
-        {showBackground && <Background />}
         <Navbar />
         <AnimatePresence mode="wait">
           <PageTransition />
