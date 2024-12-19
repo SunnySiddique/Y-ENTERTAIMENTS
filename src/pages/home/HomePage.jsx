@@ -1,4 +1,4 @@
-import HeroSection from "../../component/home/HeroSection";
+import InteractiveShapeShow from "../../component/home/HeroSection";
 import CTASection from "../../component/home/sections/CTASection";
 import HomeAbout from "../../component/home/sections/HomeAbout";
 import HomeFeaturesSection from "../../component/home/sections/HomeFeaturesSection";
@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       <main>
         {/* Hero Section */}
-        <HeroSection />
+        <InteractiveShapeShow />
 
         {/* Features Section */}
         <HomeFeaturesSection />

@@ -1,138 +1,122 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { LetterImages } from "../../utils/LetterImages";
-import LetterImage from "./LetterImage";
+import Spheres2Background from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.8/build/backgrounds/spheres2.cdn.min.js";
+import React, { useEffect, useRef, useState } from "react";
 
-const HeroSection = () => {
-  const sectionRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [positions, setPositions] = useState([]);
+export default function InteractiveShapeShow() {
+  const [gradientColors, setGradientColors] = useState(["#4a00e0", "#8e2de2"]);
+  const canvasRef = useRef(null);
+  const bgRef = useRef(null);
 
   useEffect(() => {
-    const newPositions = LetterImages.map(() => ({
-      top: Math.random() * 80,
-      left: Math.random() * 90,
-    }));
-    setPositions(newPositions);
-  }, [LetterImages]);
+    if (canvasRef.current) {
+      bgRef.current = Spheres2Background(canvasRef.current, {
+        count: 150,
+        colors: [0x4a00e0, 0x8e2de2, 0xff7700],
+        minSize: 0.4,
+        maxSize: 1.2,
+      });
+    }
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const handleBodyClick = (ev) => {
+      if (ev.target.id !== "colors-btn" && bgRef.current) {
+        bgRef.current.togglePause();
+      }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    document.body.addEventListener("click", handleBodyClick);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      document.body.removeEventListener("click", handleBodyClick);
     };
   }, []);
 
+  const handleRandomColors = () => {
+    const newColors = [
+      Math.floor(Math.random() * 0xffffff),
+      Math.floor(Math.random() * 0xffffff),
+      Math.floor(Math.random() * 0xffffff),
+    ];
+    setGradientColors([
+      `#${newColors[0].toString(16).padStart(6, "0")}`,
+      `#${newColors[1].toString(16).padStart(6, "0")}`,
+    ]);
+    if (bgRef.current) {
+      bgRef.current.spheres.setColors(newColors);
+    }
+  };
+
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen overflow-hidden mb-10"
-      style={{
-        background: `linear-gradient(135deg, #962C2C 0%, #6E1C1C 50%, #4A0F0F 100%)`,
-      }}
-    >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="grid grid-cols-4 md:grid-cols-5 "
-        >
-          {LetterImages.map((img, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="absolute"
-              style={{
-                top: `${positions[index]?.top}%`,
-                left: `${positions[index]?.left}%`,
-              }}
-            >
-              <LetterImage
-                src={img}
-                index={index}
-                sectionRef={sectionRef}
-                className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 filter drop-shadow-glow"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+    <div className="relative w-full h-screen overflow-hidden font-roboto">
+      <AnimatedGradientBackground colors={gradientColors} />
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.5 }}
-        className="container mx-auto px-4 py-16 flex flex-col items-center justify-center text-center z-10"
-      >
-        <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-8 text-white">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-            Innovate Create Entertain
-          </span>
-        </h1>
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 overflow-hidden z-10"
+      />
 
-        <p className="text-xl lg:text-2xl mb-12 max-w-2xl text-white">
-          Empowering your entertainment journey with cutting-edge solutions that
-          transform ideas into unforgettable experiences
-        </p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20">
+        <motion.h1
+          className="text-white text-7xl font-bold mb-4 uppercase drop-shadow-lg"
+          initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+          transition={{ duration: 0.5 }}
         >
-          {[
-            "Immersive Virtual Experiences",
-            "AI-Powered Content Creation",
-            "Interactive Live Streaming",
-            "Personalized Entertainment",
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2.2 + index * 0.1, duration: 0.5 }}
-              className="flex items-center space-x-4 bg-white/10 rounded-lg p-4 backdrop-blur-sm"
-            >
-              <Check className="text-white" />
-              <span className="text-lg text-white font-semibold">{item}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div className="relative mt-12">
-          <motion.div
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute inset-0 bg-white/30 rounded-full filter blur-lg"
-          />
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative z-10 px-8 py-3 bg-white text-black  font-bold rounded-full shadow-lg"
-          >
-            Get Started
-          </motion.button>
-        </motion.div>
-      </motion.div>
-    </section>
+          Y-Entertainment
+        </motion.h1>
+        <motion.h2
+          className="text-white text-5xl font-light mb-8 uppercase drop-shadow-lg"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Interactive Shape Show
+        </motion.h2>
+        <motion.p
+          className="text-white text-xl mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          Experience the future of entertainment
+        </motion.p>
+        <button
+          id="colors-btn"
+          onClick={handleRandomColors}
+          className="bg-white/70 hover:bg-white text-gray-800 px-6 py-2 rounded-full text-lg transform hover:scale-110 transition-all"
+        >
+          Random Colors
+        </button>
+      </div>
+    </div>
   );
-};
+}
 
-export default HeroSection;
+function AnimatedGradientBackground({ colors }) {
+  return (
+    <motion.div
+      className="absolute inset-0 z-0"
+      animate={{
+        background: `linear-gradient(45deg, ${colors[0]}, ${colors[1]})`,
+      }}
+      transition={{ duration: 1 }}
+    >
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0, 1, 0],
+          scale: [1, 1.5, 1],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          background: `radial-gradient(circle, ${colors[1]}55, transparent)`,
+        }}
+      />
+    </motion.div>
+  );
+}
